@@ -18,11 +18,13 @@ namespace Solid_Srp
             wr.AddEntry(new WorkReportEntry
             {
                 ProjectCode = "AI",
-                ProjectName = "Artificial Intelegence",
+                ProjectName = "Artificial Intelligence",
                 SpentHours = 5
             });
 
-            wr.SaveToFile(@"C:\Temp\", "WorkHours.txt");
+            var saver = new FileSaver();
+
+            saver.SaveToFile(@"C:\Temp", "WorkReport.txt", wr);
 
             Console.WriteLine(wr);
 
