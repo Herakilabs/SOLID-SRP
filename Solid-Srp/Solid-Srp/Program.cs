@@ -24,8 +24,8 @@ namespace Solid_Srp
 
             Console.WriteLine(report.ToString());
             
-            var saver = new FileSaver();
-            saver.SaveToFile(@"Reports", "WorkReport.txt", report);
+            
+            report.SaveToFile(@"Reports", "WorkReport.txt");
 
             Console.ReadKey();
         }
