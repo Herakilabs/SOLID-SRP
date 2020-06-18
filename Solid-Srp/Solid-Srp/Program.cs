@@ -22,15 +22,29 @@ namespace Solid_Srp
                 SpentHours = 5
             });
 
+            var scheduler = new Scheduler();
+            scheduler.AddEntry(new ScheduleTask 
+            { 
+                TaskId = 1,
+                Content = "Do something now.",
+                ExecuteOn = DateTime.Now.AddDays(5)
+            });
+
+            scheduler.AddEntry(new ScheduleTask 
+            { 
+                TaskId = 2,
+                Content = "Don't forget to...",
+                ExecuteOn = DateTime.Now.AddDays(2)
+            });
+
+            Console.WriteLine(report.ToString());
+            Console.WriteLine(scheduler.ToString());
+
             var saver = new FileSaver();
-
-            saver.SaveToFile(@"C:\Temp", "WorkReport.txt", report);
-
-            Console.WriteLine(report);
+            saver.SaveToFile(@"Reports", "WorkReport.txt", report);
+            saver.SaveToFile(@"Schedulers", "Schedule.txt", scheduler);
 
             Console.ReadKey();
         }
-    }
-
-    
+    }    
 }
