@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
 namespace Solid_Srp
 {
-    public class WorkReport
+    public class WorkReport : IEntryManager<WorkReportEntry>
     {
         private readonly List<WorkReportEntry> _entries;
 
