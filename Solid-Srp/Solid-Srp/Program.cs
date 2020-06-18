@@ -7,15 +7,15 @@ namespace Solid_Srp
     {
         static void Main(string[] args)
         {
-            var wr = new WorkReport();
+            var report = new WorkReport();
 
-            wr.AddEntry(new WorkReportEntry
+            report.AddEntry(new WorkReportEntry
             {
                 ProjectCode = "IOT",
                 ProjectName = "Internet Of Things",
                 SpentHours = 3
             });
-            wr.AddEntry(new WorkReportEntry
+            report.AddEntry(new WorkReportEntry
             {
                 ProjectCode = "AI",
                 ProjectName = "Artificial Intelligence",
@@ -24,9 +24,9 @@ namespace Solid_Srp
 
             var saver = new FileSaver();
 
-            saver.SaveToFile(@"C:\Temp", "WorkReport.txt", wr);
+            saver.SaveToFile(@"C:\Temp", "WorkReport.txt", report);
 
-            Console.WriteLine(wr);
+            Console.WriteLine(report);
 
             Console.ReadKey();
         }
