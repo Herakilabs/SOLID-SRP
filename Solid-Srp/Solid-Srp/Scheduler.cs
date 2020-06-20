@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Solid_Srp
 {
-    public class Scheduler : IEntryManager<ScheduleTask>
+    public class Scheduler : ISavable
     {
         private readonly List<ScheduleTask> _scheduleTasks;
 
